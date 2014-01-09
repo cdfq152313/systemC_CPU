@@ -1,0 +1,149 @@
+$date
+     Nov 30, 2013       20:45:33
+$end
+
+$version
+              SystemC 2.3.0-ASI --- Nov 23 2013 10:49:59
+$end
+
+$timescale
+     1 ns
+$end
+
+$scope module SystemC $end
+$var wire    1  aaa  enable       $end
+$var wire    1  aab  reset       $end
+$var wire    6  aaaac  op [5:0]  $end
+$var wire    5  aaaad  sub_op [4:0]  $end
+$var wire   32  aaaae  src1 [31:0]  $end
+$var wire   32  aaaaf  src2 [31:0]  $end
+$var wire    1  aag  overflow       $end
+$var wire   32  aaaah  output [31:0]  $end
+$upscope $end
+$enddefinitions  $end
+
+$comment
+All initial values are dumped below at time 0 sec = 0 timescale units.
+$end
+
+$dumpvars
+0aaa
+0aab
+b0 aaaac
+b0 aaaad
+b0 aaaae
+b0 aaaaf
+xaag
+bXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX aaaah
+$end
+
+#0
+1aab
+b1100 aaaad
+b11111111111111111111111111111111 aaaae
+b1 aaaaf
+
+#1000
+1aaa
+0aab
+b100000 aaaac
+b0 aaaad
+b1111111 aaaae
+b1001000110101 aaaaf
+0aag
+b0 aaaah
+
+#2000
+b11111111111111111110110111001011 aaaae
+
+#3000
+b1 aaaad
+b1111111 aaaae
+b1001010110100 aaaah
+
+#4000
+b1111111111111111111111111111111 aaaae
+1aag
+b10000000000000000001001000110100 aaaah
+
+#5000
+b10 aaaad
+b1111111 aaaae
+0aag
+b11111111111111111110111001001010 aaaah
+
+#6000
+b11111111111111111110110111001011 aaaae
+b11111111111111111101101110010110 aaaah
+
+#7000
+b11 aaaad
+b1111111 aaaae
+b110101 aaaah
+
+#8000
+b11111111111111111110110111001011 aaaae
+b1 aaaah
+
+#9000
+b100 aaaad
+b1111111 aaaae
+b1001001111111 aaaah
+
+#10000
+0aaa
+b1000 aaaad
+b1000000000000000001100 aaaae
+b1 aaaaf
+xaag
+bXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX aaaah
+
+#11000
+1aaa
+b100 aaaad
+b11111111111111111110110111001011 aaaae
+b1001000110101 aaaaf
+0aag
+b11111111111111111111111111111111 aaaah
+
+#12000
+b101 aaaad
+b1111111 aaaae
+b1001001001010 aaaah
+
+#13000
+b11111111111111111110110111001011 aaaae
+b11111111111111111111111111111110 aaaah
+
+#14000
+b110 aaaad
+b1111111 aaaae
+b11 aaaaf
+b1111 aaaah
+
+#15000
+b11111111111111111110110111001011 aaaae
+b1000 aaaaf
+b111111111111111111101101 aaaah
+
+#16000
+b111 aaaad
+b1111111 aaaae
+b10101 aaaaf
+b1111111000000000000000000000 aaaah
+
+#17000
+b11111111111111111110110111001011 aaaae
+b111 aaaaf
+b11111111111101101110010110000000 aaaah
+
+#18000
+b1000 aaaad
+b1111111 aaaae
+b1010 aaaaf
+b11111110000000000000000000000 aaaah
+
+#19000
+b11111111111111111110110111001011 aaaae
+b1110010111111111111111111111011 aaaah
+
