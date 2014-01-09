@@ -25,7 +25,6 @@ SC_MODULE(reg)
 	public:
 	//Constructor 
 	SC_CTOR(reg) {
-		set = 1;
 		SC_THREAD(thread_func);
 		dont_initialize();
 		sensitive << clock.pos();
