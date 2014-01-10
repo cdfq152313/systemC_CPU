@@ -14,11 +14,14 @@ SC_MODULE(trans_instruction)
 	sc_out<sc_lv<20> >	zs3;
 	
 	// fuction declaration
-	void thread_func();
+	void method_func();
+	
+	private:
+	sc_lv<32> temp;
 
 	public:
 	//Constructor 
-	SC_CTOR(reg) {
+	SC_CTOR(trans_instruction) {
 		SC_METHOD(method_func);
 		dont_initialize();
 		sensitive << instruction;

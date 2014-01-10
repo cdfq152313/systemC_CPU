@@ -2,11 +2,12 @@
 
 void trans_instruction::method_func()
 {
-	c_instruction= instruction.read();
-	r1_addr = instruction.read().range(24,20);
-	r2_addr = instruction.read().range();
-	rw_addr = instruction.read().range();
-	zs1 = instruction.read().range();
-	zs2 = instruction.read().range();
-	zs3 = instruction.read().range();
+	temp = instruction.read();
+	c_instruction= temp;
+	r1_addr = temp.range(24,20);
+	r2_addr = temp.range(19,15);
+	rw_addr = temp.range(14,10);
+	zs1 = temp.range(14,10);
+	zs2 = temp.range(14,0);
+	zs3 = temp.range(19,0);
 }

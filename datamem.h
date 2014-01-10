@@ -8,7 +8,7 @@ SC_MODULE(datamem)
 	sc_in<sc_logic>		read;
 	sc_in<sc_logic>		reset;
 
-	sc_in<sc_lv<18> >	addr;
+	sc_in<sc_lv<32> >	addr;
 	sc_in<sc_lv<32> >	in_data;
 
 	sc_out<sc_lv<32> >	out_data;

@@ -6,7 +6,7 @@ SC_MODULE(two_one_mux)
 	// 輸入訊號
 	sc_in<sc_lv<32> >	first;
 	sc_in<sc_lv<32> >	second;
-	sc_in<sc_lv<1> >	sel;
+	sc_in<sc_logic >	sel;
 	
 	// 輸出訊號	(mux)
 	sc_out<sc_lv<32> >	out;

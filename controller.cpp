@@ -8,7 +8,7 @@ void controller::method_func()
 	//讀取op, 讀取sub_op
 	inop  		= t_instruction.range(30,25);
 	insub_op 	= t_instruction.range(4,0);
-	insub_op2 	= t_instruction.range(7,0);
+	insub_op 	= t_instruction.range(7,0);
 	
 	
 	// 反正alu都是要動啊 ...
@@ -20,8 +20,8 @@ void controller::method_func()
 		// 輸出訊號 (mux)
 		regwrite="1";
 		regread="1";
-		alusrc="0";
-		memtoreg="10";
+		imm_reg_select="0";
+		write_back_select="10";
 		signexsel="01";
 				
 		// 輸出訊號 (datamem)
@@ -33,8 +33,8 @@ void controller::method_func()
 		// 輸出訊號 (mux)
 		regwrite="1";
 		regread="1";
-		alusrc="1";
-		memtoreg="01";
+		imm_reg_select="1";
+		write_back_select="01";
 		
 				
 		// 輸出訊號 (datamem)
@@ -51,9 +51,9 @@ void controller::method_func()
 	}
 	else if(inop=="011100"){
 		//LW SW
-		// 輸出訊號 (mux)		
-		alusrc="0";
-		memtoreg="10";
+		// 輸出訊號 (mux)	
+		imm_reg_select="0";
+		write_back_select="10";
 		signexsel="00";
 		regread="1";
 		
@@ -74,6 +74,6 @@ void controller::method_func()
 	}
 	
 	// 輸出訊號 (alu)
-	op.write(inop);
+	op= inop;
 	sub_op = insub_op;
 }

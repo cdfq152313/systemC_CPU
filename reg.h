@@ -15,6 +15,7 @@ SC_MODULE(reg)
 
 	sc_out<sc_lv<32> >	r1_data;
 	sc_out<sc_lv<32> >	r2_data;
+	sc_out<sc_lv<32> >	r3_data;
 	
 	// fuction declaration
 	void thread_func();
