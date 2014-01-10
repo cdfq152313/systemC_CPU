@@ -11,14 +11,18 @@ void datamem::thread_func()
 			// clear output
 			out_data.write(sc_lv<32>("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"));
 		}else{
+			//32bits -> 18bits
+			t = addr.read();
+			t_addr = t.range(17,0);
+			
 			// if write enable
 			if(write.read()  == '1'){
-				mem[addr.read().to_uint()] = in_data.read();
+				mem[t_addr.to_uint()] = in_data.read();
 				out_data.write(sc_lv<32>("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"));
 			}
 			// if read enable
 			if(read.read()  == '1' ){
-				out_data.write(mem[addr.read().to_uint()]);
+				out_data.write(mem[t_addr.to_uint()]);
 			}
 		}	
 #ifdef REG_DEBUG		

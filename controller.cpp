@@ -12,34 +12,34 @@ void controller::method_func()
 	
 	
 	// 反正alu都是要動啊 ...
-	enable="1";
+	enable=t;
 	
 	//依照op來輸出值
 	if(inop=="100000"){ 
 		// NOP ADD SUB AND OR XOR
 		// 輸出訊號 (mux)
-		regwrite="1";
-		regread="1";
-		imm_reg_select="0";
+		regwrite=t;
+		regread=t;
+		imm_reg_select=f;
 		write_back_select="10";
 		signexsel="01";
 				
 		// 輸出訊號 (datamem)
-		datawrite="0";	
-		dataread="0";
+		datawrite=f;	
+		dataread=f;
 	}
 	else if(inop=="101000" || inop=="101100" || inop=="101011" || inop=="100010"){
 		//ADDI ORI XORI MOVI
 		// 輸出訊號 (mux)
-		regwrite="1";
-		regread="1";
-		imm_reg_select="1";
+		regwrite=t;
+		regread=t;
+		imm_reg_select=t;
 		write_back_select="01";
 		
 				
 		// 輸出訊號 (datamem)
-		datawrite="0";	
-		dataread="0";
+		datawrite=f;	
+		dataread=f;
 		
 		if(inop=="100010")//MOVI
 			signexsel="11";
@@ -52,24 +52,24 @@ void controller::method_func()
 	else if(inop=="011100"){
 		//LW SW
 		// 輸出訊號 (mux)	
-		imm_reg_select="0";
+		imm_reg_select=f;
 		write_back_select="10";
 		signexsel="00";
-		regread="1";
+		regread=t;
 		
 		
 		//看sub_op
 		if(insub_op2=="00000010"){//LW
-			regwrite="1";
+			regwrite=t;
 			// 輸出訊號 (datamem)
-			datawrite="0";	
-			dataread="1";
+			datawrite=f;	
+			dataread=t;
 		}
 		else if(insub_op2=="00001010"){//SW
-			regwrite="0";
+			regwrite=f;
 			// 輸出訊號 (datamem)
-			datawrite="1";	
-			dataread="0";
+			datawrite=t;	
+			dataread=f;
 		}
 	}
 	

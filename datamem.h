@@ -21,7 +21,9 @@ SC_MODULE(datamem)
 
 	private:
 	sc_lv<32>		mem[2^18];
-
+	sc_lv<32>	t;
+	sc_lv<18>	t_addr;
+	
 	public:
 	//Constructor 
 	SC_CTOR(datamem) {

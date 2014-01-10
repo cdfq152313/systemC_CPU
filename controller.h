@@ -31,6 +31,8 @@ SC_MODULE(controller)
 
 	// fuction declaration
 	void method_func();
+	sc_logic t;
+	sc_logic f;
 
 	// 內部使用的接線
 	private:
@@ -42,6 +44,8 @@ SC_MODULE(controller)
 	public:
 	//Constructor 
 	SC_CTOR(controller) {
+		t = '1';
+		f = '0';
 		SC_METHOD(method_func);
 		sensitive << instruction;
 	}
