@@ -14,10 +14,11 @@ FPP=controller
 GPP=alu
 HPP=ZS_extension
 IPP=trans_instruction
+JPP=reg
 
 
 all:
-	g++ -o $(APP) $(APP).cpp $(BPP).cpp $(CPP).cpp $(DPP).cpp $(EPP).cpp $(FPP).cpp  $(GPP).cpp $(HPP).cpp $(IPP).cpp $(LIB_DIR) $(INC_DIR) $(LIB) $(RPATH) 
+	g++ -o $(APP) $(APP).cpp $(BPP).cpp $(CPP).cpp $(DPP).cpp $(EPP).cpp $(FPP).cpp  $(GPP).cpp $(HPP).cpp $(IPP).cpp $(JPP).cpp $(LIB_DIR) $(INC_DIR) $(LIB) $(RPATH) 
 
 debug:
 	g++ -o $(APP) $(APP).cpp $(BPP).cpp $(CPP).cpp $(DPP).cpp $(EPP).cpp $(FPP).cpp $(GPP).cpp $(HPP).cpp $(LIB_DIR) $(INC_DIR) $(LIB) $(RPATH) $(CFLAG)

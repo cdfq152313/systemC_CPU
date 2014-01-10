@@ -21,8 +21,8 @@ void reg::thread_func()
 			// if read enable
 			if(read.read()  == '1' ){
 				//r1 data, r2 data
-				r1_data.write((reg_[r1_addr.read().to_unit()]));
-				r2_data.write((reg_[r2_addr.read().to_unit()]));
+				r1_data.write((reg_[r1_addr.read().to_uint()]));
+				r2_data.write((reg_[r2_addr.read().to_uint()]));
 			}
 		}
 #ifdef REG_DEBUG		

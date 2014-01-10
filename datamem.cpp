@@ -5,11 +5,11 @@ void datamem::thread_func()
 	while(1){
 		if(reset.read()  == '1'){
 			// clear registers
-			for(int a = 0 ; a <  2^18 ; a++){
-				mem[a] = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+			for(int a = 0 ; a <  262144 ; a++){
+				mem[a] = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 			}
 			// clear output
-			out_data.write(sc_lv<32>("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"));
+			out_data.write(sc_lv<32>("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"));
 		}else{
 			//32bits -> 18bits
 			t = addr.read();
@@ -18,7 +18,7 @@ void datamem::thread_func()
 			// if write enable
 			if(write.read()  == '1'){
 				mem[t_addr.to_uint()] = in_data.read();
-				out_data.write(sc_lv<32>("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"));
+				out_data.write(sc_lv<32>("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"));
 			}
 			// if read enable
 			if(read.read()  == '1' ){

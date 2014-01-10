@@ -24,6 +24,3 @@ debug:
 
 clean:
 	rm -rf $(APP)
-
-haha:
-	    
